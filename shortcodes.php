@@ -1,17 +1,33 @@
 <?php
 /*
-Plugin Name: truckindia Shortcodes
+Plugin Name: TruckingIndia Theme Core
 Plugin URI: https://quadnotion.com/
 Description: Shortcode collection Plugin devloped by Quadnotion to use with King Composer page builder.
 Author: Quadnotion
 Author URI: https://quadnotion.com/
 Version: 1.0
 */
+
+
+
+
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 if(!function_exists('is_plugin_active')){
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
+
+
+/*Include Meta option and other files here*/
+
+
+
+/*-- ends --*/
+
+
+
+/*Functions associated to KingComposer*/
 
 //add a css that works for admin side. Which menas workd on the KC editor page
 function truckindia_shortcode_icon() {
@@ -22,34 +38,12 @@ function truckindia_shortcode_icon() {
 add_action( 'admin_enqueue_scripts', 'truckindia_shortcode_icon' );
 
 
-//add a css that works only if not an admin. which means works on front end page
-function truckindia_shortcode_style() {
-    wp_enqueue_style('truckindia_shortcode_main_css', plugins_url( 'css/main.css' , __FILE__ ) );
-}
-  if (!is_admin())
-  {
-      add_action( 'wp_enqueue_scripts', 'truckindia_shortcode_style' );
-  }
 
-
-//remove the <p> tag
-remove_filter( 'the_content', 'wpautop' );
-$br = false;
-add_filter( 'the_content', function( $content ) use ( $br ) {
-    return wpautop( $content, $br );
-}, 10 );
-
-
+/* Include Other Shortcode Blocks */
 if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
 
 
-    require_once ('shortcodes/title-block-elements.php');
-    require_once ('shortcodes/feature-block-elements.php');
-    require_once ('shortcodes/team-block-elements.php');
-    require_once ('shortcodes/portfolio-block-elements.php');
-    require_once ('shortcodes/home-header-elements.php');
-    require_once ('shortcodes/highlight-box.php');
-
+    /*Do not use one file per shortcode, combine them to one file based on thbeir type*/
 
 }
 
@@ -71,4 +65,3 @@ add_action( 'admin_init', 'truckindia_user_required_plugin' );
 function truckindia_user_required_plugin_notice(){
     ?><div class="error"><p>Error! you need to install or activate the <a href="https://wordpress.org/plugins/kingcomposer/">King Composer</a> plugin to run this plugin.</p></div><?php
 }
-?>
