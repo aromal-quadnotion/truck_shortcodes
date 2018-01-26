@@ -1,33 +1,17 @@
 <?php
 /*
-Plugin Name: TruckingIndia Theme Core
-Plugin URI: https://quadnotion.com/
-Description: Shortcode collection Plugin devloped by Quadnotion to use with King Composer page builder.
-Author: Quadnotion
-Author URI: https://quadnotion.com/
+Plugin Name: Truckindia Shortcodes
+Plugin URI: https://truckindia.com/
+Description: Shortcode collection Plugin devloped by truckindia to use with King Composer page builder.
+Author: truckindia
+Author URI: https://truckindia.com/
 Version: 1.0
 */
-
-
-
-
-
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 if(!function_exists('is_plugin_active')){
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 }
-
-
-/*Include Meta option and other files here*/
-
-
-
-/*-- ends --*/
-
-
-
-/*Functions associated to KingComposer*/
 
 //add a css that works for admin side. Which menas workd on the KC editor page
 function truckindia_shortcode_icon() {
@@ -38,12 +22,34 @@ function truckindia_shortcode_icon() {
 add_action( 'admin_enqueue_scripts', 'truckindia_shortcode_icon' );
 
 
+//add a css that works only if not an admin. which means works on front end page
+function truckindia_shortcode_style() {
+    wp_enqueue_style('truckindia_shortcode_main_css', plugins_url( 'css/main.css' , __FILE__ ) );
+}
+  if (!is_admin())
+  {
+      add_action( 'wp_enqueue_scripts', 'truckindia_shortcode_style' );
+  }
 
-/* Include Other Shortcode Blocks */
+
+//remove the <p> tag
+remove_filter( 'the_content', 'wpautop' );
+$br = false;
+add_filter( 'the_content', function( $content ) use ( $br ) {
+    return wpautop( $content, $br );
+}, 10 );
+
+
 if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
 
-
-    /*Do not use one file per shortcode, combine them to one file based on thbeir type*/
+    require_once ('shortcodes/home-slider.php');
+    require_once ('shortcodes/truckindia-news.php');
+    require_once ('shortcodes/callback-section.php');
+    require_once ('shortcodes/listing-item.php');
+    require_once ('shortcodes/insurance-quote.php');
+    require_once ('shortcodes/title-block.php');
+    require_once ('shortcodes/blog-block.php');
+    require_once ('shortcodes/brand-sliding-tab.php');
 
 }
 
@@ -65,3 +71,4 @@ add_action( 'admin_init', 'truckindia_user_required_plugin' );
 function truckindia_user_required_plugin_notice(){
     ?><div class="error"><p>Error! you need to install or activate the <a href="https://wordpress.org/plugins/kingcomposer/">King Composer</a> plugin to run this plugin.</p></div><?php
 }
+?>

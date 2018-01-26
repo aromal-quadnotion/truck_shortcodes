@@ -87,3 +87,28 @@
 .sc-icon-page-heading{
 	background-image: url('../icons/banner.png') !important;
 }
+
+.sc-icon-callback {
+	background-image: url('../icons/call-back.png') !important;
+}
+.sc-icon-title {
+	background-image: url('../icons/title.png') !important;
+}
+.sc-icon-news {
+	background-image: url('../icons/news.png') !important;
+}
+.sc-icon-listing {
+	background-image: url('../icons/listing.png') !important;
+}
+.sc-icon-insurance {
+	background-image: url('../icons/insurance.png') !important;
+}
+.sc-icon-slider {
+	background-image: url('../icons/slider.png') !important;
+}
+.sc-icon-blog {
+	background-image: url('../icons/blog.png') !important;
+}
+.sc-icon-carousel-icon {
+	background-image: url('../icons/carousel-icon.png') !important;
+}
