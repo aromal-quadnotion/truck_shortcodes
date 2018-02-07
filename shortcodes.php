@@ -50,6 +50,8 @@ if ( is_plugin_active( 'kingcomposer/kingcomposer.php' ) ){
     require_once ('shortcodes/title-block.php');
     require_once ('shortcodes/blog-block.php');
     require_once ('shortcodes/brand-sliding-tab.php');
+    require_once ('shortcodes/brand-sliding-name.php');
+    require_once ('shortcodes/iconised-title.php');
 
 }
 

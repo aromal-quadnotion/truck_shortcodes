@@ -9,7 +9,7 @@ function truckindia_blog_block_init(){
     $kc->add_map(
         array(
             'truckindia_blog_block' => array(
-                'name' => 'Block Block',
+                'name' => 'Blog Block',
                 'description' => __('', 'kingcomposer'),
                 'icon' => 'sc-icon sc-icon-blog',
                 'category' => 'Truckindia',
@@ -81,11 +81,11 @@ while ( $blog_loop->have_posts() )
                                   <div class="col-md-8 col-sm-12">
                                     <div class="blog-right-content-wrap">
                                       <div class="blog-right-date">
-                                        <img class="font-size-1 black" src="'.esc_url(get_template_directory_uri()).'/image/blog-date-icon.png" alt="blog date icon" />
+                                        <img class="font-size-1 black" src="'.esc_url(get_template_directory_uri()).'/images/blog-date-icon.png" alt="blog date icon" />
                                         <span class="font-h font-size-1 font-weight-400 gray-l">'.$blog_date.'</span>
                                       </div>
                                       <div class="blog-right-title">
-                                        <span class="font-r font-weight-700 font-size-3 black uppercase">'.$blog_title.'</span>
+                                        <span class="font-r font-weight-700 font-size-3 black uppercase"><a class="black ease" href="'.$blog_link.'">'.$blog_title.'</a></span>
                                       </div>
                                       <div class="blog-right-content">
                                         <span class="font-h gray-l font-size-1 font-weight-400">'.truckindia_clean($blog_content, 90).'</span>
@@ -107,11 +107,11 @@ while ( $blog_loop->have_posts() )
                                     <div class="col-md-6 col-sm-12">
                                       <div class="blog-left-content-wrap">
                                         <div class="blog-left-date">
-                                          <img class="font-size-1 black" src="'.esc_url(get_template_directory_uri()).'/image/blog-date-icon.png" alt="blog date icon" />
+                                          <img class="font-size-1 black" src="'.esc_url(get_template_directory_uri()).'/images/blog-date-icon.png" alt="blog date icon" />
                                           <span class="font-h font-size-1 gray-l font-weight-400">'.$blog_date.'</span>
                                         </div>
                                         <div class="blog-left-title">
-                                          <span class="font-r font-weight-700 font-size-4 black uppercase">'.$blog_title.'</span>
+                                          <span class="font-r font-weight-700 font-size-4 black uppercase"><a class="ease black" href="'.$blog_link.'">'.$blog_title.'</a></span>
                                         </div>
                                         <div class="blog-left-content">
                                           <span class="font-h gray-l font-size-1 font-weight-400">'.truckindia_clean($blog_content, 220).'</span>
@@ -145,7 +145,7 @@ while ( $blog_loop->have_posts() )
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                       <div class="blog-block-button">
-                        <a class=" ease blog-block-button-text uppercase" href="'.$blog_button_link.'">read all news <img class="font-size-1" src="'.esc_url(get_template_directory_uri()).'/image/read-all-news.png" alt="read news" /></a>
+                        <a class=" ease blog-block-button-text uppercase" href="'.$blog_button_link.'">read all news <img class="font-size-1" src="'.esc_url(get_template_directory_uri()).'/images/read-all-news.png" alt="read news" /></a>
                       </div>
                     </div>
                     <div class="col-md-4"></div>

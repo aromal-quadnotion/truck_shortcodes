@@ -95,7 +95,7 @@ $title = join(" ", $title);
 
                     $news_items .= '<div class="news-view">
                                       <div class="news-view-details">
-                                        <img src="'.esc_url(get_template_directory_uri()).'/image/news/truck-news.svg" alt="news truck" />
+                                        <img src="'.esc_url(get_template_directory_uri()).'/images/news/truck-news.svg" alt="news truck" />
                                         <a href="'.esc_url($link).'"><span class="white font-r uppercase font-weight-400 font-size-5">'.esc_html($news_title).'</span></a>
                                       </div>
                                     </div>';

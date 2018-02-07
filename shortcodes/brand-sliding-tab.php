@@ -10,7 +10,7 @@ function truckindia_brand_sliding_tab_init(){
     $kc->add_map(
         array(
             'truckindia_brand_sliding_tab' => array(
-                'name' => 'Brand Sliding Tab',
+                'name' => 'Brand Sliding',
                 'description' => __('', 'kingcomposer'),
                 'icon' => 'sc-icon sc-icon-carousel-icon',
                 'category' => 'Truckindia',
@@ -63,7 +63,7 @@ function render_truckindia_brand_sliding_tab($atts, $content = null){
 
     ), $atts) );
 
-        
+
         //used for group loops
         $brand_group ='';
         foreach ($atts['brand_group'] as $key => $item) {
@@ -79,8 +79,12 @@ function render_truckindia_brand_sliding_tab($atts, $content = null){
               $brand_image_gallery_markup .= '<li><img src="'.esc_url($brand_image_item_url).'"></li>';
             }//Image Looping Code
 
+              $brand_title_name = $brand_title;
+              $brand_title_name = strtolower(str_replace(' ', '-', $brand_title_name));
+              $brand_title_name = 'brand-'.$brand_title_name;
+              //var_dump($brand_title_name);
 
-            $brand_group .= '<li><a href="#">'.$brand_title.'</a>
+            $brand_group .= '<li class="brand-slider-list-item"><a id="'.$brand_title_name.'" class="brand-title" href="javascript:void(0)">'.$brand_title.'</a>
                               <ul class="brand-image-display owl-carousel owl-theme">
                                 '.$brand_image_gallery_markup.'
                               </ul>
@@ -89,8 +93,8 @@ function render_truckindia_brand_sliding_tab($atts, $content = null){
 
 
         $output= '<section class="brand-disply-block">
-                    <div class="brand-name-display">
-                      <ul class="justify-content-end">
+                    <div class="brand-display">
+                      <ul class="brand-slider-list">
                         '.$brand_group.'
                       </ul>
                     </div>

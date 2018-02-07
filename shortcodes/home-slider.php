@@ -86,87 +86,87 @@ function render_truckindia_banner($atts, $content = null){
                 <div id="banner-tab-block">
                   <div class="banner-tabs">
                     <ul class="banner-tab-links">
-                    <li class="active"><a href="#tab1">INSURANCE</a></li>
-                    <li><a href="#tab2">FINANCE</a></li>
-                    <li><a href="#tab3">BUY/SELL</a></li>
+                    <li class="active"><a href="#trucking-insurance">INSURANCE</a></li>
+                    <li><a href="#trucking-finance">FINANCE</a></li>
+                    <li><a href="#trucking-buy-sell">BUY/SELL</a></li>
                     </ul>
                     <div class="tab-content ease">
-                      <div id="tab1" class="tab active">
+                      <div id="trucking-insurance" class="tab active">
                         <div class="mar-top-hhalf mar-bot-hhalf text-center">
                           <div class="banner-tab1-content display-inline font-weight-300 white font-size-4 font-r">Enter Truck Registration <span class="font-weight-700">Number</span></div>
                           <input name="vehicle-num" value="" class="banner-tab1-input white font-h font-weight-400 text-center uppercase"  placeholder="TN 55 AZ 1234" type="text">
                           <a class="banner-tab1-button white font-size-5 font-r font-weight-300 ease" href="#">GET A <span class="font-weight-700">QUOTE</span></a>
                         </div>
                       </div>
-                      <div id="tab2" class="tab">
+                      <div id="trucking-finance" class="tab">
                         <div class="mar-top-hhalf mar-bot-hhalf text-center">
                             <input name="name" value="" class="banner-tab2-input white font-h font-weight-400 text-center uppercase"  placeholder="Your Name" type="text">
                             <input name="mob" value="" class="banner-tab2-input white font-h font-weight-400 text-center uppercase"  placeholder="Mobile Number" type="text">
                             <a class="banner-tab1-button white font-size-5 font-r font-weight-300 ease" href="#">GET A <span class="font-weight-700">QUOTE</span></a>
                         </div>
                       </div>
-                      <div id="tab3" class="tab">
+                      <div id="trucking-buy-sell" class="tab">
                         <ul class="truck-search-list">
-                          <li class="ease">
-                            <a href="#">
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/mini-trucks.svg" alt="Mini Trucks" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/mini-trucks.svg" alt="Mini Trucks" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Mini Trucks</div>
+                                <div class="truck-category uppercase font-h font-size-1 red font-weight-600">Mini Trucks</div>
                               </div>
-                            </a>
-                          </li>
-                          <li class="ease">
-                            <a href="#">
+                            </li>
+                          </a>
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/pickup.svg" alt="Pickup" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/pickup.svg" alt="Pickup" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Pickup</div>
+                                <div class="truck-category uppercase font-h red font-size-1 font-weight-600">Pickup</div>
                               </div>
-                            </a>
-                          </li>
-                          <li class="ease">
-                            <a href="#">
+                            </li>
+                          </a>
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/tipper.svg" alt="Tipper" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/tipper.svg" alt="Tipper" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Tipper</div>
+                                <div class="truck-category uppercase red font-h font-size-1 font-weight-600">Tipper</div>
                               </div>
-                            </a>
-                          </li>
-                          <li class="ease">
-                            <a href="#">
+                            </li>
+                          </a>
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/trailer.svg" alt="Trailer" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/trailer.svg" alt="Trailer" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Trailer</div>
+                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Trailer</div>
                               </div>
-                            </a>
-                          </li>
-                          <li class="ease">
-                            <a href="#">
+                            </li>
+                          </a>
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/tanker.svg" alt="Tanker" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/tanker.svg" alt="Tanker" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Tanker</div>
+                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Tanker</div>
                               </div>
-                            </a>
-                          </li>
-                          <li class="ease">
-                            <a href="#">
+                            </li>
+                          </a>
+                          <a href="#">
+                            <li class="ease">
                               <div class="truck-search-list-item">
                                 <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/image/truck-search-icons/flat-bed.svg" alt="Flat Bed" />
+                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/flat-bed.svg" alt="Flat Bed" />
                                 </div>
-                                <div class="truck-category uppercase font-h font-size-1 font-weight-600">Flat Bed</div>
+                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Flat Bed</div>
                               </div>
-                            </a>
-                          </li>
+                            </li>
+                          </a>
                         </ul>
                       </div>
                     </div>
