@@ -70,6 +70,35 @@ function render_truckindia_banner($atts, $content = null){
       $images_gallery_markup .= '<div class="slideshow-image" style="background-image: url('.esc_url($images_item_url).');"></div>';
     }
 
+
+
+    $truck_list = '';
+    $terms = get_terms( 'truck-type', 'hide_empty=0' );
+    if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
+
+        foreach ( $terms as $term ) {
+            $icon_url = get_term_meta( $term->term_id, '_truck_type_thumb', true );
+            $truck_list .= '<li class="ease">
+                    <a href="'.home_url().'/listings?truck-type='.$term->slug.'">
+                      <div class="truck-search-list-item">
+                        <div class="truck-search-image">
+                          <img class="svg-convert" src="'.$icon_url.'" alt="'.$term->name.'" title="'.$term->name.'" />
+                        </div>
+                        <div class="truck-category uppercase font-h font-size-1 font-weight-600">'.$term->name.'</div>
+                      </div>
+                    </a>
+                  </li>';
+        }
+
+        $truck_type = '<ul class="truck-search-list">
+                        '.$truck_list.'
+                       </ul>';
+    }
+
+
+
+
+
     $output= '
               <section class="banner">
                   <div class="banner-title-bg"></div>
@@ -106,68 +135,7 @@ function render_truckindia_banner($atts, $content = null){
                         </div>
                       </div>
                       <div id="trucking-buy-sell" class="tab">
-                        <ul class="truck-search-list">
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/mini-trucks.svg" alt="Mini Trucks" />
-                                </div>
-                                <div class="truck-category uppercase font-h font-size-1 red font-weight-600">Mini Trucks</div>
-                              </div>
-                            </li>
-                          </a>
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/pickup.svg" alt="Pickup" />
-                                </div>
-                                <div class="truck-category uppercase font-h red font-size-1 font-weight-600">Pickup</div>
-                              </div>
-                            </li>
-                          </a>
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/tipper.svg" alt="Tipper" />
-                                </div>
-                                <div class="truck-category uppercase red font-h font-size-1 font-weight-600">Tipper</div>
-                              </div>
-                            </li>
-                          </a>
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/trailer.svg" alt="Trailer" />
-                                </div>
-                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Trailer</div>
-                              </div>
-                            </li>
-                          </a>
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/tanker.svg" alt="Tanker" />
-                                </div>
-                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Tanker</div>
-                              </div>
-                            </li>
-                          </a>
-                          <a href="#">
-                            <li class="ease">
-                              <div class="truck-search-list-item">
-                                <div class="truck-search-image">
-                                  <img src="'.esc_url(get_template_directory_uri()).'/images/truck-search-icons/flat-bed.svg" alt="Flat Bed" />
-                                </div>
-                                <div class="truck-category red uppercase font-h font-size-1 font-weight-600">Flat Bed</div>
-                              </div>
-                            </li>
-                          </a>
-                        </ul>
+                        '.$truck_type.'
                       </div>
                     </div>
                   </div>

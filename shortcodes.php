@@ -1,12 +1,5 @@
 <?php
-/*
-Plugin Name: Truckindia Shortcodes
-Plugin URI: https://truckindia.com/
-Description: Shortcode collection Plugin devloped by truckindia to use with King Composer page builder.
-Author: truckindia
-Author URI: https://truckindia.com/
-Version: 1.0
-*/
+
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 if(!function_exists('is_plugin_active')){

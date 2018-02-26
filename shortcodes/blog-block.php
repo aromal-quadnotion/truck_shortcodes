@@ -70,10 +70,11 @@ while ( $blog_loop->have_posts() )
       if($blog_num < 4) {
 
         $blog_title = get_the_title();
-        $blog_content = get_the_content();
+        $blog_content = wp_strip_all_tags(get_the_excerpt());
         $blog_img_url = get_the_post_thumbnail_url( get_the_ID(), 'large' );
         $blog_date = get_the_date();
         $blog_link = get_permalink();;
+
 
         if($blog_num > 1) {
           $blog_item_rest .= '<div class="blog-right-wrap">
@@ -88,7 +89,7 @@ while ( $blog_loop->have_posts() )
                                         <span class="font-r font-weight-700 font-size-3 black uppercase"><a class="black ease" href="'.$blog_link.'">'.$blog_title.'</a></span>
                                       </div>
                                       <div class="blog-right-content">
-                                        <span class="font-h gray-l font-size-1 font-weight-400">'.truckindia_clean($blog_content, 90).'</span>
+                                        <span class="font-h gray-l font-size-1 font-weight-400">'.esc_html(truckindia_clean($blog_content, 90)).'</span>
                                       </div>
                                       <div class="blog-right-read-more">
                                         <a class="uppercase font-r font-weight-400" href="'.$blog_link.'" style="color: #FF001F;">Read <span>More</span></a>
@@ -102,6 +103,7 @@ while ( $blog_loop->have_posts() )
                               </div>';
         }else{
 
+
           $blog_items_first .= '<div class="blog-left-wrap">
                                   <div class="row">
                                     <div class="col-md-6 col-sm-12">
@@ -114,7 +116,7 @@ while ( $blog_loop->have_posts() )
                                           <span class="font-r font-weight-700 font-size-4 black uppercase"><a class="ease black" href="'.$blog_link.'">'.$blog_title.'</a></span>
                                         </div>
                                         <div class="blog-left-content">
-                                          <span class="font-h gray-l font-size-1 font-weight-400">'.truckindia_clean($blog_content, 220).'</span>
+                                          <span class="font-h gray-l font-size-1 font-weight-400">'.esc_html(truckindia_clean($blog_content, 290)).'</span>
                                         </div>
                                         <div class="blog-left-read-more">
                                           <a class="uppercase font-r font-weight-400" href="'.$blog_link.'" style="color: #FF001F;">Read <span>More</span></a>
@@ -145,7 +147,7 @@ while ( $blog_loop->have_posts() )
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
                       <div class="blog-block-button">
-                        <a class=" ease blog-block-button-text uppercase" href="'.$blog_button_link.'">read all news <img class="font-size-1" src="'.esc_url(get_template_directory_uri()).'/images/read-all-news.png" alt="read news" /></a>
+                        <a class=" ease blog-block-button-text uppercase" href="'.$blog_button_link.'">read all news <i class="fa fa-th" aria-hidden="true"></i></a>
                       </div>
                     </div>
                     <div class="col-md-4"></div>

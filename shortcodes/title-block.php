@@ -53,7 +53,7 @@ function render_truckindia_title_block($atts, $content = null){
                 <div class="title-block-line1"></div>
                 <div class="title-block-line2"></div>
                 <div class="title-block-content">
-                  <p class="uppercase font-h font-weight-300" style="letter-spacing: 0.45px; font-size: 24px; color: red;">'.$title.'</p>
+                  <p class="title-common uppercase font-h font-weight-300">'.$title.'</p>
                 </div>
               </section>';
 
